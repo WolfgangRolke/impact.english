@@ -1,8 +1,8 @@
 ---
 title: Statistical Analysis
 output: 
-  html_document: default
   word_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -24,7 +24,7 @@ The data is in a file called *langcomp.xlsx*, also available from the github pag
 
 ```{r}
 library(rio)
-langcomp=import("https://raw.github.com/wolfgangrolke/impact.english/main/langcomp.xlsx")[, c(1,3,4,5,6,7,8)]
+langcomp=import("https://raw.github.com/wolfgangrolke/impacto.espanol/main/langcomp.xlsx")[, c(1,3,4,5,6,7,8)]
 ```
 
 - To have a unique identifier for each school, combine the number, name and region into one variable
@@ -261,7 +261,7 @@ r=round(cor(A$English.Mean, A$Percentage.SDE.English)*100, 1)
 cat(r,"%\n")
 ```
 
-Not surprisingly they are highly correlated .
+Not surprisingly they are highly correlated (r=`r r`%).
 
 How large is the difference between the high-SES and the low-SES students achievement scores? To answer this question we run a 2-sample-t test and find a 95\% confidence interval for the scores of high-SES students minus the scores of the low-SES students. We repeat the same test for gender. The result is shown in table 3.
 
